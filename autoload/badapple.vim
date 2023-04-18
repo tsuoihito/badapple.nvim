@@ -22,8 +22,8 @@ function! badapple#play() abort
     " Floating Window
     if exists('*nvim_buf_set_lines()')
       let buf = nvim_create_buf(v:false, v:true)
-      let opts = {'relative': 'cursor', 'width': 100, 'height': 29,
-                  \'row': 5, 'col': 5, 'style': 'minimal'}
+      let opts = {'relative': 'editor', 'width': 100, 'height': 28,
+                  \'row': (&lines - 28) * 0.5, 'col': (&columns - 100) * 0.5, 'style': 'minimal'}
       let win = nvim_open_win(buf, 0, opts)
 
       for frame in frames
